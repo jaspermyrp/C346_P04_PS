@@ -1,5 +1,6 @@
 package sg.edu.rp.c346.reservation;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         smoking = "Non-smoking Area";
                     }
-                    Toast.makeText(MainActivity.this, "Test" + name + pax + mobile + smoking, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Reservation - Name:" + name +", Pax:"+ pax +", Mobile:"+ mobile +", "+ smoking+".", Toast.LENGTH_LONG).show();
                 }
             }
         });
