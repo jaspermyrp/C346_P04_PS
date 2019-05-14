@@ -55,18 +55,18 @@ public class MainActivity extends AppCompatActivity {
                 String mobile = etMobile.getText().toString();
                 String smoking;
 
-                if(name.isEmpty() || pax.isEmpty() || mobile.isEmpty()){
+                if (name.isEmpty() || pax.isEmpty() || mobile.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please fill in all fields!", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     // Reserve //
 
                     // Check checkbox selection //
-                    if(cbSmokingArea.isChecked()){
+                    if (cbSmokingArea.isChecked()) {
                         smoking = "Smoking Area";
-                    }else{
+                    } else {
                         smoking = "Non-smoking Area";
                     }
-                    Toast.makeText(MainActivity.this, "Test"+name+pax+mobile+smoking, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Test" + name + pax + mobile + smoking, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -74,24 +74,24 @@ public class MainActivity extends AppCompatActivity {
         tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                if(hourOfDay < 8){
+                if (hourOfDay < 8) {
                     tp.setCurrentHour(8);
                 }
 
-                if(hourOfDay > 20){
+                if (hourOfDay > 20) {
                     tp.setCurrentHour(20);
                 }
             }
         });
     }
 
-    public void setDefaultDateTime(){
-        dp.updateDate(2019,5,1);
+    public void setDefaultDateTime() {
+        dp.updateDate(2019, 5, 1);
         tp.setCurrentHour(19);
         tp.setCurrentMinute(30);
     }
 
-    public void clearAllFields(){
+    public void clearAllFields() {
         tvHeader.setText("");
         etName.setText("");
         etPax.setText("");
