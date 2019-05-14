@@ -67,7 +67,13 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         smoking = "Non-smoking Area";
                     }
-                    Toast.makeText(MainActivity.this, "Reservation - Name:" + name +", Pax:"+ pax +", Mobile:"+ mobile +", "+ smoking+".", Toast.LENGTH_LONG).show();
+
+                    // Check dates //
+                    String date = dp.getDayOfMonth() + "/" + dp.getMonth() + "/" + dp.getYear();
+                    String time = tp.getCurrentHour() + ":" + tp.getCurrentMinute();
+
+                    String reservationMsg = String.format("Reservation success - Name:%s, Pax:%s, Mobile:%s, %s on %s %s ", name, pax, mobile, smoking, date, time);
+                    Toast.makeText(MainActivity.this, reservationMsg, Toast.LENGTH_LONG).show();
                 }
             }
         });
