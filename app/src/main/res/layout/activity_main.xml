@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="@string/name" />
+        android:hint="@string/name"
+        android:layout_margin="5dp"/>
 
     <EditText
         android:id="@+id/mobileIn"
@@ -29,7 +30,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:hint="@string/mobileNo" />
+        android:hint="@string/mobileNo"
+        android:layout_margin="5dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,17 +40,20 @@
 
         <EditText
             android:id="@+id/paxIn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
+            android:layout_weight="2"
+            android:layout_margin="5dp"
             android:hint="@string/pax" />
 
         <CheckBox
             android:id="@+id/smokingIn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
+            android:layout_margin="5dp"
             android:text="@string/smoking" />
     </LinearLayout>
 
