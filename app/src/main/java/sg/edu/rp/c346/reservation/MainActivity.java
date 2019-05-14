@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void setDefaultDateTime() {
         dp.updateDate(2019, 5, 1);
+        dp.setMinDate(System.currentTimeMillis());
         tp.setCurrentHour(19);
         tp.setCurrentMinute(30);
     }
@@ -118,15 +119,8 @@ public class MainActivity extends AppCompatActivity {
                 String date = dp.getDayOfMonth() + "/" + (dp.getMonth() + 1) + "/" + dp.getYear();
                 String time = tp.getCurrentHour() + ":" + tp.getCurrentMinute();
 
-                // Check if date is earlier than current date //
-                //if () {
-                //  Toast.makeText(MainActivity.this, "The reservation date cannot be less than today!", Toast.LENGTH_LONG).show();
-                //} else {
                 String reservationMsg = String.format("Reservation successful\nName:%s, Pax:%s, Mobile:%s, \n%s \non %s %s ", name, pax, mobile, smoking, date, time);
                 Toast.makeText(MainActivity.this, reservationMsg, Toast.LENGTH_LONG).show();
-                //}
-
-
             }
         }
     }
