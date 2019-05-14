@@ -59,21 +59,28 @@ public class MainActivity extends AppCompatActivity {
                 if (name.isEmpty() || pax.isEmpty() || mobile.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please fill in all fields!", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Reserve //
+                    int paxNo = Integer.parseInt(pax);
 
-                    // Check checkbox selection //
-                    if (cbSmokingArea.isChecked()) {
-                        smoking = "Smoking Area";
-                    } else {
-                        smoking = "Non-smoking Area";
+                    if(paxNo < 1 || mobile.length() != 8){
+                        String errorMsg = "Invalid Pax or Mobile number";
+                        Toast.makeText(MainActivity.this, errorMsg, Toast.LENGTH_SHORT).show();
+                    }else{
+                        // Reserve //
+
+                        // Check checkbox selection //
+                        if (cbSmokingArea.isChecked()) {
+                            smoking = "Smoking Area";
+                        } else {
+                            smoking = "Non-smoking Area";
+                        }
+
+                        // Check dates //
+                        String date = dp.getDayOfMonth() + "/" + dp.getMonth() + "/" + dp.getYear();
+                        String time = tp.getCurrentHour() + ":" + tp.getCurrentMinute();
+
+                        String reservationMsg = String.format("Reservation successful\nName:%s, Pax:%s, Mobile:%s, \n%s \non %s %s ", name, pax, mobile, smoking, date, time);
+                        Toast.makeText(MainActivity.this, reservationMsg, Toast.LENGTH_LONG).show();
                     }
-
-                    // Check dates //
-                    String date = dp.getDayOfMonth() + "/" + dp.getMonth() + "/" + dp.getYear();
-                    String time = tp.getCurrentHour() + ":" + tp.getCurrentMinute();
-
-                    String reservationMsg = String.format("Reservation success - Name:%s, Pax:%s, Mobile:%s, %s on %s %s ", name, pax, mobile, smoking, date, time);
-                    Toast.makeText(MainActivity.this, reservationMsg, Toast.LENGTH_LONG).show();
                 }
             }
         });
