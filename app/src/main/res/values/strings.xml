@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Reservation</string>
+
+    <string name="header">Enter your Reservation Information</string>
+    <string name="name">Name</string>
+    <string name="mobileNo">Mobile Number</string>
+    <string name="pax">Number of Pax</string>
+    <string name="smoking">Smoking area</string>
+
+    <string name="reset">Clear fields</string>
+    <string name="submit">Reserve</string>
+</resources>
